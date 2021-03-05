@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthQueryService {
+  rpc GenToken (GenTokenRequest) returns (GenTokenResponse) {}
+}
+
+message GenTokenRequest {
+  string uuid = 1;
+}
+
+message GenTokenResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+}
